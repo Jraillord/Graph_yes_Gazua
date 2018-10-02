@@ -59,16 +59,25 @@
     for(let i=38; i<dates.length; i++) 
       MACD_S[i] = average(MACD.slice(i-9, i+1));
     
+    for(let i=0; i<37; i++) 
+      OSC[i] = [dates[i], 0];
     for(let i=38; i<dates.length; i++) 
       OSC[i] = [dates[i], MACD[i] - MACD_S[i]];
     
     let MA30_MA10 = [], MACD_MACD_S = [];
+    for(let i=0; i<8; i++) 
+      MA30_MA10[i] = [dates[i], 0, 0];
     for(let i=9; i<dates.length; i++) 
       MA30_MA10[i] = [dates[i], MA30[i], MA10[i]];
     
+    for(let i=0; i<28; i++) 
+      MACD_MACD_S[i] = [dates[i], 0, 0];
     for(let i=29; i<dates.length; i++) 
       MACD_MACD_S[i] = [dates[i], MACD[i], MACD_S[i]];
     
+    console.log(MA30_MA10)
+    console.log(MACD_MACD_S)
+    console.log(OSC)
     MA30_MA10 = MA30_MA10.filter(t => t);
     MACD_MACD_S = MACD_MACD_S.filter(t => t);
     OSC = OSC.filter(t => t);
