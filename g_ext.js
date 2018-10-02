@@ -64,10 +64,10 @@
     
     let MA30_MA10 = [], MACD_MACD_S = [];
     for(let i=9; i<dates.length; i++) 
-      MA30_MA10[i-29] = [dates[i], MA30[i], MA10[i]];
+      MA30_MA10[i] = [dates[i], MA30[i], MA10[i]];
     
     for(let i=29; i<dates.length; i++) 
-      MACD_MACD_S[i-30] = [dates[i], MACD[i], MACD_S[i]];
+      MACD_MACD_S[i] = [dates[i], MACD[i], MACD_S[i]];
     
     MA30_MA10 = MA30_MA10.filter(t => t);
     MACD_MACD_S = MACD_MACD_S.filter(t => t);
