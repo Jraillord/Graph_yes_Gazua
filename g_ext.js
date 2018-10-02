@@ -58,12 +58,7 @@
     
     for(let i=38; i<dates.length; i++) 
       MACD_S[i] = average(MACD.slice(i-9, i+1));
-    
-    for(let i=0; i<37; i++) 
-      OSC[i] = [dates[i], 0];
-    for(let i=38; i<dates.length; i++) 
-      OSC[i] = [dates[i], MACD[i] - MACD_S[i]];
-    
+       
     let MA30_MA10 = [], MACD_MACD_S = [];
     for(let i=0; i<8; i++) 
       MA30_MA10[i] = [dates[i], 0, 0];
@@ -74,6 +69,11 @@
       MACD_MACD_S[i] = [dates[i], 0, 0];
     for(let i=29; i<dates.length; i++) 
       MACD_MACD_S[i] = [dates[i], MACD[i], MACD_S[i]];
+    
+    for(let i=0; i<37; i++) 
+      OSC[i] = [dates[i], 0];
+    for(let i=38; i<dates.length; i++) 
+      OSC[i] = [dates[i], MACD[i] - MACD_S[i]];
     
     console.log(MA30_MA10)
     console.log(MACD_MACD_S)
@@ -90,7 +90,7 @@
     function drawChart(columns, rows, id, type = 'line') {
       //by 배용석
       const OPT = { 
-        width: 1000, height: 180, fontSize: 10,
+        width: 1800, height: 300, fontSize: 10,
         //title: '어흥' ,
         titleTextStyle: {color: 'black', fontName: '굴림', fontSize: 13}
       }; 
