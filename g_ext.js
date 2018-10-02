@@ -60,7 +60,7 @@
       MACD_S[i] = average(MACD.slice(i-9, i+1));
     
     for(let i=38; i<dates.length; i++) 
-      OSC[i] = [dates[i], MACD_S[i] - MACD[i]];
+      OSC[i] = [dates[i], MACD[i] - MACD_S[i]];
     
     let MA30_MA10 = [], MACD_MACD_S = [];
     for(let i=9; i<dates.length; i++) 
