@@ -61,12 +61,12 @@
        
     let MA30_MA10 = [], MACD_MACD_S = [];
     for(let i=0; i<8; i++) 
-      MA30_MA10[i] = [dates[i], 0, 0];
+      MA30_MA10[i] = [dates[i], null, null];
     for(let i=9; i<dates.length; i++) 
       MA30_MA10[i] = [dates[i], MA30[i], MA10[i]];
     
     for(let i=0; i<28; i++) 
-      MACD_MACD_S[i] = [dates[i], 0, 0];
+      MACD_MACD_S[i] = [dates[i], null, null];
     for(let i=29; i<dates.length; i++) 
       MACD_MACD_S[i] = [dates[i], MACD[i], MACD_S[i]];
     
